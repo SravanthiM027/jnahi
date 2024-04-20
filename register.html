@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <style>
+    body{
+      background-color:aquamarine;
+        text-align: justify;
+    display:"flex";
+    color:black;
+    align-items: center;
+}
+    /* Your existing styles here */
+  </style>
+</head>
+<body align="center">
+       <button type="submit">HI!there you are registration page</button>
+  <form id="registraionForm" onsubmit="validateForm(event)">
+   
+    <h2>User Registration</h2>
+    <label for="name">Name :</label>
+    <input type="text" id="name" name="name" maxlength="10" required placeholder="Name"><br>
+
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" maxlength="50" required  placeholder="Email"><br>
+
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" maxlength="10" required  placeholder="Password"><br>
+
+
+    
+    <button type="submit">Register</button>
+     <button type="submit">Register</button>
+  </form>
+<br>
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (name === '' || email === '' || password === '' || confirmPassword === '') {
+        alert('All fields must be filled out');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+
+      // Additional validation logic can be added here
+
+      alert('Registration successful!');
+    }
+  </script>
+  
+</body>
+</html>
